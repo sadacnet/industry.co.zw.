@@ -13,6 +13,9 @@
 ### **Configuration Management**
 *   Environment-specific settings (database host, credentials, debug levels) are currently baked into the PHP files or `render.yaml`.
 
+### **Data Exposure in Backups/Dumps**
+*   SQL dumps of the production database (like the one provided) contain sensitive information such as admin password hashes and private contact details. These should be stored in encrypted locations and never shared in public or insecure channels.
+
 ## 2. Recommendations
 
 ### **Implement Environment Variables**

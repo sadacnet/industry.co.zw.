@@ -55,3 +55,7 @@ Industry in Zimbabwe is a comprehensive industrial portal and business directory
 - `companies`: The central table for all business listings, linked to industries and provinces.
 - `tenders`, `events`, `exports`: Tables for specific business data types.
 - `admin_users`: Authentication for the management portal.
+- `cifoz_categories`, `company_cifoz_categories`: Specialized category hierarchy for CIFOZ.
+- `industry_showcase`: Links companies to specific industry landing page highlights.
+- `showcase_*`: Specialized tables for premium content (Banners, Flyers, Gallery, Posters, Videos).
+- `industry_news`: Stores industry-specific news articles and updates.

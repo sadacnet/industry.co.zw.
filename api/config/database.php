@@ -6,11 +6,19 @@
 
 class Database {
     // Database credentials
-    private $host = "localhost";
-    private $db_name = "industry_co_zw";
-    private $username = "root";
-    private $password = "";  // Default XAMPP has no password
+    private $host;
+    private $db_name;
+    private $username;
+    private $password;
     private $conn;
+
+    public function __construct() {
+        // Support for environment variables (Render/Cloud) or default to XAMPP (Local)
+        $this->host = getenv('DB_HOST') ?: "localhost";
+        $this->db_name = getenv('DB_NAME') ?: "industry_co_zw";
+        $this->username = getenv('DB_USER') ?: "root";
+        $this->password = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : "";
+    }
 
     /**
      * Get database connection

@@ -3,7 +3,7 @@
 ## 1. Identified Risks
 
 ### **Hardcoded Credentials & Sensitive Information**
-*   **`api/config/database.php`**: Contains hardcoded database credentials (`localhost`, `root`, and an empty password).
+*   **`api/config/database.php`**: Previously contained hardcoded database credentials. Now supports environment variables with local fallbacks.
 *   **`generate-hash.php`**: Contains a hardcoded plaintext password (`Admin@2026!`). This file should be removed from production environments.
 *   **`database/schema.sql`**: Contains a placeholder for the admin password hash.
 
@@ -19,15 +19,8 @@
 ## 2. Recommendations
 
 ### **Implement Environment Variables**
-*   Move all sensitive configuration to a `.env` file (not committed to version control).
-*   Use a library like `phpdotenv` or PHP's built-in `getenv()` to access these variables.
-*   Update `api/config/database.php` to use these variables:
-    ```php
-    $this->host = getenv('DB_HOST');
-    $this->db_name = getenv('DB_NAME');
-    $this->username = getenv('DB_USER');
-    $this->password = getenv('DB_PASSWORD');
-    ```
+*   **[COMPLETED]** `api/config/database.php` now uses `getenv()` to retrieve credentials, allowing for secure deployment on platforms like Render or Heroku.
+*   For local development, continue using a `.env` file (ensure it is not committed to version control) or rely on the local fallbacks in the code.
 
 ### **Cleanup Development Artifacts**
 *   Delete `generate-hash.php` once the initial admin account is created.

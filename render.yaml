@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: industry-co-zw
+    runtime: php
+    buildCommand: ""
+    startCommand: "php -S 0.0.0.0:10000 -t ."
+    envVars:
+      - key: DB_HOST
+        value: your-database-host.render.com
+      - key: DB_NAME
+        value: industry_co_zw
+      - key: DB_USER
+        value: your-database-user
+      - key: DB_PASSWORD
+        value: your-database-password

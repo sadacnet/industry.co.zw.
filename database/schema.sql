@@ -33,20 +33,37 @@ CREATE TABLE companies (
     name VARCHAR(200) NOT NULL,
     industry_id INT NOT NULL,
     province_id INT NOT NULL,
+    city VARCHAR(100),
+    address TEXT,
     stakeholder VARCHAR(20) DEFAULT NULL,
+    listing_type ENUM('industry', 'partner') DEFAULT 'industry',
     phone VARCHAR(20),
     email VARCHAR(255),
     website VARCHAR(255),
     logo VARCHAR(255),
     description TEXT,
     is_active TINYINT(1) DEFAULT 1,
+    is_featured TINYINT(1) DEFAULT 0,
+
+    -- Showcase Fields
+    showcase_active TINYINT(1) DEFAULT 0,
+    showcase_tier ENUM('platinum', 'gold', 'silver') DEFAULT NULL,
+    showcase_order INT DEFAULT 0,
+    showcase_tagline VARCHAR(255),
+    showcase_full_description TEXT,
+
+    -- CIFOZ Specific Fields
+    cifoz_member_type VARCHAR(100),
+    cifoz_category_raw TEXT,
+
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (industry_id) REFERENCES industries(id) ON DELETE CASCADE,
     FOREIGN KEY (province_id) REFERENCES provinces(id) ON DELETE CASCADE,
     INDEX idx_stakeholder (stakeholder),
     INDEX idx_industry (industry_id),
-    INDEX idx_province (province_id)
+    INDEX idx_province (province_id),
+    INDEX idx_listing_type (listing_type)
 );
 
 CREATE TABLE advertisements (
@@ -83,25 +100,48 @@ CREATE TABLE events (
 
 CREATE TABLE tenders (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    tender_number VARCHAR(50),
     title VARCHAR(200) NOT NULL,
+    issuing_organization VARCHAR(200),
+    category VARCHAR(100),
     description TEXT,
+    budget DECIMAL(15,2),
+    location VARCHAR(200),
     closing_date DATE NOT NULL,
+    bid_opening_date DATE,
+    contact_email VARCHAR(255),
+    contact_phone VARCHAR(50),
+    submission_requirements TEXT,
+    eligibility_criteria TEXT,
     document_url VARCHAR(255),
+    document_url2 VARCHAR(255),
+    document_url3 VARCHAR(255),
     is_active TINYINT(1) DEFAULT 1,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX idx_closing_date (closing_date)
+    INDEX idx_closing_date (closing_date),
+    INDEX idx_category (category)
 );
 
 CREATE TABLE exports (
     id INT AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(200) NOT NULL,
     category VARCHAR(100),
+    company VARCHAR(200),
     description TEXT,
+    specs TEXT,
+    price DECIMAL(15,2),
+    moq INT DEFAULT 1,
     image VARCHAR(255),
+    rating DECIMAL(3,2) DEFAULT 0,
+    reviews INT DEFAULT 0,
+    exports_to TEXT,
+    certifications TEXT,
+    verified TINYINT(1) DEFAULT 0,
     is_active TINYINT(1) DEFAULT 1,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_category (category)
 );
 
 CREATE TABLE gallery (
@@ -141,6 +181,39 @@ CREATE TABLE admin_users (
     email VARCHAR(255),
     last_login TIMESTAMP NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- CIFOZ Specific Categories Table
+CREATE TABLE cifoz_categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    parent_id INT DEFAULT NULL,
+    slug VARCHAR(100) UNIQUE NOT NULL,
+    name VARCHAR(200) NOT NULL,
+    level INT DEFAULT 1,
+    display_order INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (parent_id) REFERENCES cifoz_categories(id) ON DELETE CASCADE
+);
+
+-- Company to CIFOZ Category Mapping
+CREATE TABLE company_cifoz_categories (
+    company_id INT NOT NULL,
+    category_id INT NOT NULL,
+    PRIMARY KEY (company_id, category_id),
+    FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES cifoz_categories(id) ON DELETE CASCADE
+);
+
+-- Industry Showcase Table (Used in industries.php)
+CREATE TABLE industry_showcase (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    industry_slug VARCHAR(50) NOT NULL,
+    company_id INT NOT NULL,
+    is_active TINYINT(1) DEFAULT 1,
+    display_order INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE,
+    INDEX idx_industry_slug (industry_slug)
 );
 
 INSERT INTO industries (slug, name, icon, description, display_order) VALUES

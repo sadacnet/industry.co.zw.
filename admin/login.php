@@ -1,9 +1,10 @@
 <?php
+require_once __DIR__ . '/../api/config/database.php';
 session_start();
 
 // If already logged in, redirect to dashboard
 if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
-    header('Location: /industry.co.zw/admin/dashboard.php');
+    header('Location: ' . SITE_ROOT . '/admin/dashboard.php');
     exit;
 }
 ?>
@@ -134,7 +135,7 @@ if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true
             const errorDiv = document.getElementById('error');
             
             try {
-                const response = await fetch('/industry.co.zw/admin/api/auth.php', {
+                const response = await fetch('<?= SITE_ROOT ?>/admin/api/auth.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -146,7 +147,7 @@ if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true
                 
                 if (data.status === 'success') {
                     // Login successful - redirect to dashboard
-                    window.location.href = '/industry.co.zw/admin/dashboard.php';
+                    window.location.href = '<?= SITE_ROOT ?>/admin/dashboard.php';
                 } else {
                     errorDiv.textContent = data.message;
                     errorDiv.classList.add('show');

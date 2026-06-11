@@ -2,8 +2,8 @@
 <header id="header" class="header d-flex align-items-center fixed-top" style="background: #ffffff !important; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); border-bottom: 1px solid #e8ecef;">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.php" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/industry-logo-20.png" alt="industry.co.zw Logo" style="max-height: 60px;">
+      <a href="<?= SITE_ROOT ?>/index.php" class="logo d-flex align-items-center me-auto">
+        <img src="<?= SITE_ROOT ?>/assets/img/industry-logo-20.png" alt="industry.co.zw Logo" style="max-height: 60px;">
       </a>
 
       <!-- Mobile Toggle Button -->
@@ -13,11 +13,11 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'class="active"' : ''; ?>>Home</a></li>
+          <li><a href="<?= SITE_ROOT ?>/index.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'class="active"' : ''; ?>>Home</a></li>
           
           <!-- Industries Mega Dropdown - Now links to industries.php -->
           <li class="dropdown has-mega">
-            <a href="industries.php">Industries <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <a href="<?= SITE_ROOT ?>/industries.php">Industries <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul class="mega-sub">
               <li class="mega-wrap">
                 <div class="mega-grid">
@@ -49,7 +49,7 @@
                   </div>
                 </div>
                 <div class="mega-footer" style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #e8ecef; text-align: right;">
-                  <a href="industries.php" style="color: #2e7d32; font-size: 12px; font-weight: 600; text-decoration: none;">View All Industries →</a>
+                  <a href="<?= SITE_ROOT ?>/industries.php" style="color: #2e7d32; font-size: 12px; font-weight: 600; text-decoration: none;">View All Industries →</a>
                 </div>
               </li>
             </ul>
@@ -57,32 +57,32 @@
           
           <!-- Provinces Mega Dropdown -->
           <li class="dropdown has-mega">
-            <a href="provinces.php">Provinces <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <a href="<?= SITE_ROOT ?>/provinces.php">Provinces <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul class="mega-sub">
               <li class="mega-wrap">
                 <div class="mega-grid">
                   <div class="mega-group">
                     <h6>Northern Region</h6>
-                    <a href="province.php?slug=harare">Harare</a>
-                    <a href="province.php?slug=mashonaland-central">Mashonaland Central</a>
-                    <a href="province.php?slug=mashonaland-east">Mashonaland East</a>
-                    <a href="province.php?slug=mashonaland-west">Mashonaland West</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=harare">Harare</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=mashonaland-central">Mashonaland Central</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=mashonaland-east">Mashonaland East</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=mashonaland-west">Mashonaland West</a>
                   </div>
                   <div class="mega-group">
                     <h6>Southern Region</h6>
-                    <a href="province.php?slug=bulawayo">Bulawayo</a>
-                    <a href="province.php?slug=matabeleland-north">Matabeleland North</a>
-                    <a href="province.php?slug=matabeleland-south">Matabeleland South</a>
-                    <a href="province.php?slug=midlands">Midlands</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=bulawayo">Bulawayo</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=matabeleland-north">Matabeleland North</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=matabeleland-south">Matabeleland South</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=midlands">Midlands</a>
                   </div>
                   <div class="mega-group">
                     <h6>Eastern Region</h6>
-                    <a href="province.php?slug=manicaland">Manicaland</a>
-                    <a href="province.php?slug=masvingo">Masvingo</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=manicaland">Manicaland</a>
+                    <a href="<?= SITE_ROOT ?>/province.php?slug=masvingo">Masvingo</a>
                   </div>
                 </div>
                 <div class="mega-footer" style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #e8ecef; text-align: right;">
-                  <a href="provinces.php" style="color: #2e7d32; font-size: 12px; font-weight: 600; text-decoration: none;">View All Provinces →</a>
+                  <a href="<?= SITE_ROOT ?>/provinces.php" style="color: #2e7d32; font-size: 12px; font-weight: 600; text-decoration: none;">View All Provinces →</a>
                 </div>
               </li>
             </ul>
@@ -96,24 +96,24 @@
                 <div class="mega-grid">
                   <div class="mega-group">
                     <h6>CZI</h6>
-                    <a href="stakeholder.php?org=CZI&section=directory">Membership Directory</a>
-                    <a href="stakeholder.php?org=CZI&section=advertising">Advertising</a>
-                    <a href="stakeholder.php?org=CZI&section=events">Events Calendar</a>
-                    <a href="stakeholder.php?org=CZI&section=networking">Networking</a>
+                    <a href="<?= SITE_ROOT ?>/stakeholder.php?org=CZI&section=directory">Membership Directory</a>
+                    <a href="<?= SITE_ROOT ?>/stakeholder.php?org=CZI&section=advertising">Advertising</a>
+                    <a href="<?= SITE_ROOT ?>/stakeholder.php?org=CZI&section=events">Events Calendar</a>
+                    <a href="<?= SITE_ROOT ?>/stakeholder.php?org=CZI&section=networking">Networking</a>
                   </div>
                   <div class="mega-group">
                     <h6>CIFOZ</h6>
-                    <a href="stakeholder.php?org=CIFOZ&section=directory">Membership Directory</a>
-                    <a href="stakeholder.php?org=CIFOZ&section=advertising">Advertising</a>
-                    <a href="stakeholder.php?org=CIFOZ&section=events">Events Calendar</a>
-                    <a href="stakeholder.php?org=CIFOZ&section=networking">Networking</a>
+                    <a href="<?= SITE_ROOT ?>/stakeholder.php?org=CIFOZ&section=directory">Membership Directory</a>
+                    <a href="<?= SITE_ROOT ?>/stakeholder.php?org=CIFOZ&section=advertising">Advertising</a>
+                    <a href="<?= SITE_ROOT ?>/stakeholder.php?org=CIFOZ&section=events">Events Calendar</a>
+                    <a href="<?= SITE_ROOT ?>/stakeholder.php?org=CIFOZ&section=networking">Networking</a>
                   </div>
                 </div>
               </li>
             </ul>
           </li>
           
-          <li><a href="tenders.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'tenders.php') ? 'class="active"' : ''; ?>>Tenders</a></li>
+          <li><a href="<?= SITE_ROOT ?>/tenders.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'tenders.php') ? 'class="active"' : ''; ?>>Tenders</a></li>
           
           <!-- Exports Mega Dropdown -->
           <li class="dropdown has-mega">
@@ -128,7 +128,7 @@
                     <a href="exports.php?category=Manufacturing">Manufactured Goods</a>
                     <a href="exports.php?category=Textiles">Textiles & Apparel</a>
                     <a href="exports.php?category=Horticulture">Horticulture</a>
-                    <a href="exports.php" style="color: #2e7d32; font-weight: 600; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e8ecef;">View All Products →</a>
+                    <a href="<?= SITE_ROOT ?>/exports.php" style="color: #2e7d32; font-weight: 600; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e8ecef;">View All Products →</a>
                   </div>
                 </div>
               </li>
@@ -143,25 +143,25 @@
                 <div class="mega-grid" style="grid-template-columns: 1fr;">
                   <div class="mega-group">
                     <h6>Media & Resources</h6>
-                    <a href="events.php">Events</a>
-                    <a href="gallery.php">Image Gallery</a>
-                    <a href="videos.php">Video Gallery</a>
+                    <a href="<?= SITE_ROOT ?>/events.php">Events</a>
+                    <a href="<?= SITE_ROOT ?>/gallery.php">Image Gallery</a>
+                    <a href="<?= SITE_ROOT ?>/videos.php">Video Gallery</a>
                   </div>
                   <div class="mega-group" style="margin-top: 10px;">
                     <h6>Information</h6>
-                    <a href="about.php">About Us</a>
-                    <a href="contact.php">Contact Us</a>
+                    <a href="<?= SITE_ROOT ?>/about.php">About Us</a>
+                    <a href="<?= SITE_ROOT ?>/contact.php">Contact Us</a>
                   </div>
                 </div>
               </li>
             </ul>
           </li>
           
-          <li><a href="contact.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'contact.php') ? 'class="active"' : ''; ?>>Contact</a></li>
+          <li><a href="<?= SITE_ROOT ?>/contact.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'contact.php') ? 'class="active"' : ''; ?>>Contact</a></li>
         </ul>
       </nav>
 
-      <a class="btn-getstarted" href="add-listing.php" style="background: #2e7d32; color: #ffffff; padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 13px; text-decoration: none; transition: all 0.3s ease;">Add Listing</a>
+      <a class="btn-getstarted" href="<?= SITE_ROOT ?>/add-listing.php" style="background: #2e7d32; color: #ffffff; padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 13px; text-decoration: none; transition: all 0.3s ease;">Add Listing</a>
 
     </div>
 </header>

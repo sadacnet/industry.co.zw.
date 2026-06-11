@@ -131,7 +131,7 @@ loadDropdowns();
 
 async function loadMembers() {
     try {
-        const response = await fetch('/industry.co.zw/admin/api/members.php');
+        const response = await fetch('<?= SITE_ROOT ?>/admin/api/members.php');
         const data = await response.json();
         if (data.status === 'success') {
             allMembers = data.data;
@@ -201,11 +201,11 @@ function displayMembers(members) {
 
 async function loadDropdowns() {
     try {
-        const r1 = await fetch('/industry.co.zw/api/public/industries.php');
+        const r1 = await fetch('<?= SITE_ROOT ?>/api/public/industries.php');
         const d1 = await r1.json();
         if (d1.status==='success') document.getElementById('industry_id').innerHTML = '<option value="">Select</option>' + d1.data.map(i=>`<option value="${i.id}">${i.name}</option>`).join('');
         
-        const r2 = await fetch('/industry.co.zw/api/public/provinces.php');
+        const r2 = await fetch('<?= SITE_ROOT ?>/api/public/provinces.php');
         const d2 = await r2.json();
         if (d2.status==='success') document.getElementById('province_id').innerHTML = '<option value="">Select</option>' + d2.data.map(p=>`<option value="${p.id}">${p.name}</option>`).join('');
     } catch(e) { console.error(e); }
@@ -232,7 +232,7 @@ function closeModal() { document.getElementById('memberModal').style.display = '
 
 async function editMember(id) {
     try {
-        const r = await fetch(`/industry.co.zw/admin/api/members.php?id=${id}`);
+        const r = await fetch(`<?= SITE_ROOT ?>/admin/api/members.php?id=${id}`);
         const d = await r.json();
         if (d.status==='success') {
             const m = d.data;
@@ -257,7 +257,7 @@ async function editMember(id) {
 async function deleteMember(id) {
     if (!confirm('Delete this member?')) return;
     try {
-        await fetch(`/industry.co.zw/admin/api/members.php?id=${id}`, {method:'DELETE'});
+        await fetch(`<?= SITE_ROOT ?>/admin/api/members.php?id=${id}`, {method:'DELETE'});
         showAlert('Deleted!','success');
         loadMembers();
     } catch(e) { showAlert('Error','error'); }
@@ -282,7 +282,7 @@ document.getElementById('memberForm').addEventListener('submit', async function(
         is_active: document.getElementById('is_active').value
     };
     
-    const url = id ? `/industry.co.zw/admin/api/members.php?id=${id}` : '/industry.co.zw/admin/api/members.php';
+    const url = id ? `<?= SITE_ROOT ?>/admin/api/members.php?id=${id}` : '<?= SITE_ROOT ?>/admin/api/members.php';
     const method = id ? 'PUT' : 'POST';
     
     try {

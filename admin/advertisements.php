@@ -135,7 +135,7 @@ loadAds();
 
 async function loadAds() {
     try {
-        const res = await fetch('/industry.co.zw/admin/api/advertisements.php');
+        const res = await fetch('<?= SITE_ROOT ?>/admin/api/advertisements.php');
         const data = await res.json();
         if (data.status === 'success') {
             allAds = data.data;
@@ -159,7 +159,7 @@ function renderAds(ads) {
             <td>${a.id}</td>
             <td>
                 ${isImage ? 
-                    `<img src="/industry.co.zw/${a.file_path}" style="max-height:40px;max-width:60px;border-radius:4px;cursor:pointer;" onclick="window.open('/industry.co.zw/${a.file_path}','_blank')" onerror="this.style.display='none'">` :
+                    `<img src="<?= SITE_ROOT ?>/${a.file_path}" style="max-height:40px;max-width:60px;border-radius:4px;cursor:pointer;" onclick="window.open('<?= SITE_ROOT ?>/${a.file_path}','_blank')" onerror="this.style.display='none'">` :
                     '<span class="badge bg-secondary">File</span>'}
             </td>
             <td><strong>${a.title || 'Untitled'}</strong></td>
@@ -218,7 +218,7 @@ async function editAd(id) {
     const fileExt = (ad.file_type || '').toLowerCase();
     const isImage = ['jpg','jpeg','png','gif','webp'].includes(fileExt);
     if (isImage) {
-        document.getElementById('adPreview').innerHTML = `<img src="/industry.co.zw/${ad.file_path}" style="max-height:100px;border-radius:8px;">`;
+        document.getElementById('adPreview').innerHTML = `<img src="<?= SITE_ROOT ?>/${ad.file_path}" style="max-height:100px;border-radius:8px;">`;
     } else {
         document.getElementById('adPreview').innerHTML = `<i class="bi bi-file-earmark" style="font-size:48px;color:#999;"></i><p>${ad.file_path}</p>`;
     }
@@ -228,7 +228,7 @@ async function editAd(id) {
 
 async function deleteAd(id) {
     if (!confirm('Delete this advertisement?')) return;
-    await fetch(`/industry.co.zw/admin/api/advertisements.php?id=${id}`, {method:'DELETE'});
+    await fetch(`<?= SITE_ROOT ?>/admin/api/advertisements.php?id=${id}`, {method:'DELETE'});
     showAlert('Advertisement deleted','success');
     loadAds();
 }
@@ -238,7 +238,7 @@ document.getElementById('file_path').addEventListener('input', function() {
     const path = this.value.trim();
     const preview = document.getElementById('adPreview');
     if (path) {
-        preview.innerHTML = `<img src="/industry.co.zw/${path}" style="max-height:100px;border-radius:8px;" onerror="this.innerHTML='<i class=\\'bi bi-file-earmark\\' style=\\'font-size:48px;color:#999;\\'></i><p>'+path+'</p>'">`;
+        preview.innerHTML = `<img src="<?= SITE_ROOT ?>/${path}" style="max-height:100px;border-radius:8px;" onerror="this.innerHTML='<i class=\\'bi bi-file-earmark\\' style=\\'font-size:48px;color:#999;\\'></i><p>'+path+'</p>'">`;
     } else {
         preview.innerHTML = '<span class="text-muted">Enter file path to see preview</span>';
     }
@@ -258,7 +258,7 @@ document.getElementById('adForm').addEventListener('submit', async function(e) {
         is_active: document.getElementById('is_active').value
     };
     
-    const url = id ? `/industry.co.zw/admin/api/advertisements.php?id=${id}` : '/industry.co.zw/admin/api/advertisements.php';
+    const url = id ? `<?= SITE_ROOT ?>/admin/api/advertisements.php?id=${id}` : '<?= SITE_ROOT ?>/admin/api/advertisements.php';
     const method = id ? 'PUT' : 'POST';
     const res = await fetch(url, {method, headers:{'Content-Type':'application/json'}, body:JSON.stringify(formData)});
     const data = await res.json();

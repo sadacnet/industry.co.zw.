@@ -120,7 +120,7 @@
 loadTenders();
 
 async function loadTenders() {
-    const res = await fetch('/industry.co.zw/admin/api/tenders.php');
+    const res = await fetch('<?= SITE_ROOT ?>/admin/api/tenders.php');
     const data = await res.json();
     if (data.status === 'success') {
         const tbody = document.querySelector('#tendersTable tbody');
@@ -156,7 +156,7 @@ function openAddModal() {
 function closeModal() { document.getElementById('tenderModal').style.display = 'none'; }
 
 async function editTender(id) {
-    const res = await fetch('/industry.co.zw/admin/api/tenders.php');
+    const res = await fetch('<?= SITE_ROOT ?>/admin/api/tenders.php');
     const data = await res.json();
     const t = data.data.find(x => x.id == id);
     if (!t) return;
@@ -184,7 +184,7 @@ async function editTender(id) {
 
 async function deleteTender(id) {
     if (!confirm('Delete this tender?')) return;
-    await fetch(`/industry.co.zw/admin/api/tenders.php?id=${id}`, {method:'DELETE'});
+    await fetch(`<?= SITE_ROOT ?>/admin/api/tenders.php?id=${id}`, {method:'DELETE'});
     showAlert('Tender deleted','success');
     loadTenders();
 }
@@ -212,7 +212,7 @@ document.getElementById('tenderForm').addEventListener('submit', async function(
         is_active: document.getElementById('is_active').value
     };
     
-    const url = id ? `/industry.co.zw/admin/api/tenders.php?id=${id}` : '/industry.co.zw/admin/api/tenders.php';
+    const url = id ? `<?= SITE_ROOT ?>/admin/api/tenders.php?id=${id}` : '<?= SITE_ROOT ?>/admin/api/tenders.php';
     const method = id ? 'PUT' : 'POST';
     const res = await fetch(url, {method, headers:{'Content-Type':'application/json'}, body:JSON.stringify(formData)});
     const data = await res.json();

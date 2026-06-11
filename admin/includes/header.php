@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../../api/config/database.php';
 require_once __DIR__ . '/auth-check.php';
 requireAdminLogin();
 $currentAdmin = getCurrentAdmin();
@@ -258,16 +259,16 @@ $currentAdmin = getCurrentAdmin();
             🏭 industry.co.zw
         </div>
         <ul class="sidebar-menu">
-            <li><a href="dashboard.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'active' : ''; ?>">📊 Dashboard</a></li>
-            <li><a href="members.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'members.php' ? 'active' : ''; ?>">🏢 Members</a></li>
-            <li><a href="events.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'events.php' ? 'active' : ''; ?>">📅 Events</a></li>
-            <li><a href="tenders.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'tenders.php' ? 'active' : ''; ?>">📄 Tenders</a></li>
-            <li><a href="advertisements.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'advertisements.php' ? 'active' : ''; ?>">📢 Advertisements</a></li>
-            <li><a href="exports.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'exports.php' ? 'active' : ''; ?>">📦 Exports</a></li>
-            <li><a href="gallery.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'gallery.php' ? 'active' : ''; ?>">🖼️ Gallery</a></li>
-            <li><a href="videos.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'videos.php' ? 'active' : ''; ?>">🎥 Videos</a></li>
-            <li><a href="messages.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'messages.php' ? 'active' : ''; ?>">📧 Messages</a></li>
-            <li><a href="upload-images.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'upload-test.php' ? 'active' : ''; ?>">📤 Upload Images</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/dashboard.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'active' : ''; ?>">📊 Dashboard</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/members.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'members.php' ? 'active' : ''; ?>">🏢 Members</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/events.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'events.php' ? 'active' : ''; ?>">📅 Events</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/tenders.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'tenders.php' ? 'active' : ''; ?>">📄 Tenders</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/advertisements.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'advertisements.php' ? 'active' : ''; ?>">📢 Advertisements</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/exports.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'exports.php' ? 'active' : ''; ?>">📦 Exports</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/gallery.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'gallery.php' ? 'active' : ''; ?>">🖼️ Gallery</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/videos.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'videos.php' ? 'active' : ''; ?>">🎥 Videos</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/messages.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'messages.php' ? 'active' : ''; ?>">📧 Messages</a></li>
+            <li><a href="<?= SITE_ROOT ?>/admin/upload-images.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'upload-test.php' ? 'active' : ''; ?>">📤 Upload Images</a></li>
         </ul>
     </div>
     
@@ -279,6 +280,6 @@ $currentAdmin = getCurrentAdmin();
             </div>
             <div>
                 Welcome, <strong><?php echo htmlspecialchars($currentAdmin['username']); ?></strong>
-                <a href="logout.php" class="btn btn-danger" style="margin-left: 10px;">Logout</a>
+                <a href="<?= SITE_ROOT ?>/admin/logout.php" class="btn btn-danger" style="margin-left: 10px;">Logout</a>
             </div>
         </div>

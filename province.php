@@ -404,8 +404,8 @@ $provinceName = getProvinceName($slug);
     <!-- BREADCRUMB NAVIGATION -->
     <div class="breadcrumb-wrapper">
         <ul class="breadcrumb">
-            <li><a href="index.php"><i class="bi bi-house-door"></i> Home</a></li>
-            <li><a href="provinces.php">Provinces</a></li>
+            <li><a href="<?= SITE_ROOT ?>/index.php"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="<?= SITE_ROOT ?>/provinces.php">Provinces</a></li>
             <li><span class="current"><?php echo $provinceName; ?></span></li>
         </ul>
     </div>
@@ -551,7 +551,7 @@ $provinceName = getProvinceName($slug);
         <div class="cta-section">
             <h3>Invest in <?php echo $provinceName; ?></h3>
             <p>Join the growing business community and take advantage of the opportunities available in this province.</p>
-            <a href="contact.php" class="cta-btn">Get Started →</a>
+            <a href="<?= SITE_ROOT ?>/contact.php" class="cta-btn">Get Started →</a>
         </div>
     </div>
 
@@ -561,7 +561,7 @@ $provinceName = getProvinceName($slug);
 
 <script>
     const slug = '<?php echo $slug; ?>';
-    const API = '/industry.co.zw/api/public';
+    const API = '<?= SITE_ROOT ?>/api/public';
     let allCompanies = [];
     let filteredCompanies = [];
     let currentPage = 1;
@@ -703,7 +703,7 @@ $provinceName = getProvinceName($slug);
         <div class="col-lg-3 col-md-6">
             <div class="service-item">
                 <div class="icon"><i class="bi bi-building"></i></div>
-                <h4><a href="industry.php?slug=${ind.slug}">${ind.name}</a></h4>
+                <h4><a href="<?= SITE_ROOT ?>/industry.php?slug=${ind.slug}">${ind.name}</a></h4>
                 <p>${ind.desc}</p>
             </div>
         </div>
@@ -798,7 +798,7 @@ $provinceName = getProvinceName($slug);
             <div class="col-lg-4 col-md-6">
                 <div class="company-card">
                     <div class="company-logo">
-                        ${c.logo ? `<img src="/industry.co.zw/${c.logo}" alt="${escapeHtml(c.name)}">` : `<div class="default-icon"><i class="bi bi-building"></i></div>`}
+                        ${c.logo ? `<img src="<?= SITE_ROOT ?>/${c.logo}" alt="${escapeHtml(c.name)}">` : `<div class="default-icon"><i class="bi bi-building"></i></div>`}
                     </div>
                     <div class="company-name">${escapeHtml(c.name)}</div>
                     <div>

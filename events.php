@@ -622,7 +622,7 @@ require_once __DIR__ . '/includes/head.php';
 
     async function fetchEvents() {
         try {
-            const response = await fetch('/industry.co.zw/api/public/events.php');
+            const response = await fetch('<?= SITE_ROOT ?>/api/public/events.php');
             const data = await response.json();
             allEvents = (data.status === 'success' && data.data.length > 0) ? data.data : [];
         } catch (error) {
@@ -697,7 +697,7 @@ require_once __DIR__ . '/includes/head.php';
             // Image preview - opens FLYER modal (image only)
             const hasImage = event.poster ? true : false;
             const imageHtml = hasImage ? 
-                `<img src="/industry.co.zw/${event.poster}" alt="${escapeHtml(event.title)}" class="event-image-preview" onclick="event.stopPropagation(); openFlyer('${event.poster}')" loading="lazy">` :
+                `<img src="<?= SITE_ROOT ?>/${event.poster}" alt="${escapeHtml(event.title)}" class="event-image-preview" onclick="event.stopPropagation(); openFlyer('${event.poster}')" loading="lazy">` :
                 `<div class="no-image-preview"><i class="bi bi-image"></i></div>`;
 
             return `
@@ -733,7 +733,7 @@ require_once __DIR__ . '/includes/head.php';
     function openFlyer(posterPath) {
         if (!posterPath) return;
         const flyerImage = document.getElementById('flyerImage');
-        flyerImage.src = '/industry.co.zw/' + posterPath;
+        flyerImage.src = '<?= SITE_ROOT ?>/' + posterPath;
         document.getElementById('flyerModal').classList.add('show');
         document.body.style.overflow = 'hidden';
     }

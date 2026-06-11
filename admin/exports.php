@@ -71,7 +71,7 @@ loadProducts();
 
 async function loadProducts() {
     try {
-        const res = await fetch('/industry.co.zw/admin/api/exports.php');
+        const res = await fetch('<?= SITE_ROOT ?>/admin/api/exports.php');
         const data = await res.json();
         if (data.status === 'success') {
             const tbody = document.querySelector('#productsTable tbody');
@@ -79,7 +79,7 @@ async function loadProducts() {
             tbody.innerHTML = data.data.map(p => `
                 <tr>
                     <td>${p.id}</td>
-                    <td>${p.image ? `<img src="/industry.co.zw/${p.image}" style="max-height:35px;">` : '-'}</td>
+                    <td>${p.image ? `<img src="<?= SITE_ROOT ?>/${p.image}" style="max-height:35px;">` : '-'}</td>
                     <td><strong>${p.product_name}</strong><br><small>${p.specs||''}</small></td>
                     <td><span class="badge bg-success">${p.category||'General'}</span></td>
                     <td>$${parseFloat(p.price).toLocaleString()}</td>
@@ -104,7 +104,7 @@ function openAddModal() {
 function closeModal() { document.getElementById('productModal').style.display = 'none'; }
 
 async function editProduct(id) {
-    const res = await fetch('/industry.co.zw/admin/api/exports.php');
+    const res = await fetch('<?= SITE_ROOT ?>/admin/api/exports.php');
     const data = await res.json();
     const p = data.data.find(x => x.id == id);
     if (!p) return;
@@ -129,7 +129,7 @@ async function editProduct(id) {
 
 async function deleteProduct(id) {
     if (!confirm('Delete this product?')) return;
-    await fetch(`/industry.co.zw/admin/api/exports.php?id=${id}`, {method:'DELETE'});
+    await fetch(`<?= SITE_ROOT ?>/admin/api/exports.php?id=${id}`, {method:'DELETE'});
     showAlert('Product deleted','success');
     loadProducts();
 }
@@ -153,7 +153,7 @@ document.getElementById('productForm').addEventListener('submit', async function
         verified: document.getElementById('productVerified').value,
         is_active: document.getElementById('productStatus').value
     };
-    const url = id ? `/industry.co.zw/admin/api/exports.php?id=${id}` : '/industry.co.zw/admin/api/exports.php';
+    const url = id ? `<?= SITE_ROOT ?>/admin/api/exports.php?id=${id}` : '<?= SITE_ROOT ?>/admin/api/exports.php';
     const method = id ? 'PUT' : 'POST';
     const res = await fetch(url, {method, headers:{'Content-Type':'application/json'}, body:JSON.stringify(formData)});
     const data = await res.json();

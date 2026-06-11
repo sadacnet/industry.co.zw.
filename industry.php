@@ -410,8 +410,8 @@ $industryNews = [
     <!-- BREADCRUMB NAVIGATION -->
     <div class="breadcrumb-wrapper">
         <ul class="breadcrumb">
-            <li><a href="index.php"><i class="bi bi-house-door"></i> Home</a></li>
-            <li><a href="industries.php">Industries</a></li>
+            <li><a href="<?= SITE_ROOT ?>/index.php"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="<?= SITE_ROOT ?>/industries.php">Industries</a></li>
             <li><span class="current"><?php echo $industryName; ?> Suppliers</span></li>
         </ul>
     </div>
@@ -422,19 +422,19 @@ $industryNews = [
             <div class="category-tabs-wrapper">
                 <button class="scroll-arrow left" onclick="scrollTabs(-1)"><i class="bi bi-chevron-left"></i></button>
                 <div class="category-tabs" id="categoryTabs">
-                    <a href="industry.php?slug=auto" class="category-tab <?php echo $slug == 'auto' ? 'active' : ''; ?>"><i class="bi bi-car-front"></i> Auto</a>
-                    <a href="industry.php?slug=accommodation" class="category-tab <?php echo $slug == 'accommodation' ? 'active' : ''; ?>"><i class="bi bi-building"></i> Accommodation</a>
-                    <a href="industry.php?slug=agriculture" class="category-tab <?php echo $slug == 'agriculture' ? 'active' : ''; ?>"><i class="bi bi-leaf"></i> Agriculture</a>
-                    <a href="industry.php?slug=banking-finance" class="category-tab <?php echo $slug == 'banking-finance' ? 'active' : ''; ?>"><i class="bi bi-bank"></i> Finance</a>
-                    <a href="industry.php?slug=construction" class="category-tab <?php echo $slug == 'construction' ? 'active' : ''; ?>"><i class="bi bi-hammer"></i> Construction</a>
-                    <a href="industry.php?slug=education" class="category-tab <?php echo $slug == 'education' ? 'active' : ''; ?>"><i class="bi bi-book"></i> Education</a>
-                    <a href="industry.php?slug=energy-power" class="category-tab <?php echo $slug == 'energy-power' ? 'active' : ''; ?>"><i class="bi bi-lightning-charge"></i> Energy</a>
-                    <a href="industry.php?slug=healthcare" class="category-tab <?php echo $slug == 'healthcare' ? 'active' : ''; ?>"><i class="bi bi-capsule"></i> Healthcare</a>
-                    <a href="industry.php?slug=manufacturing" class="category-tab <?php echo $slug == 'manufacturing' ? 'active' : ''; ?>"><i class="bi bi-gear"></i> Manufacturing</a>
-                    <a href="industry.php?slug=mining" class="category-tab <?php echo $slug == 'mining' ? 'active' : ''; ?>"><i class="bi bi-minecart"></i> Mining</a>
-                    <a href="industry.php?slug=technology-ict" class="category-tab <?php echo $slug == 'technology-ict' ? 'active' : ''; ?>"><i class="bi bi-laptop"></i> ICT</a>
-                    <a href="industry.php?slug=tourism-hospitality" class="category-tab <?php echo $slug == 'tourism-hospitality' ? 'active' : ''; ?>"><i class="bi bi-compass"></i> Tourism</a>
-                    <a href="industry.php?slug=transport-logistics" class="category-tab <?php echo $slug == 'transport-logistics' ? 'active' : ''; ?>"><i class="bi bi-truck"></i> Transport</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=auto" class="category-tab <?php echo $slug == 'auto' ? 'active' : ''; ?>"><i class="bi bi-car-front"></i> Auto</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=accommodation" class="category-tab <?php echo $slug == 'accommodation' ? 'active' : ''; ?>"><i class="bi bi-building"></i> Accommodation</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=agriculture" class="category-tab <?php echo $slug == 'agriculture' ? 'active' : ''; ?>"><i class="bi bi-leaf"></i> Agriculture</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=banking-finance" class="category-tab <?php echo $slug == 'banking-finance' ? 'active' : ''; ?>"><i class="bi bi-bank"></i> Finance</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=construction" class="category-tab <?php echo $slug == 'construction' ? 'active' : ''; ?>"><i class="bi bi-hammer"></i> Construction</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=education" class="category-tab <?php echo $slug == 'education' ? 'active' : ''; ?>"><i class="bi bi-book"></i> Education</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=energy-power" class="category-tab <?php echo $slug == 'energy-power' ? 'active' : ''; ?>"><i class="bi bi-lightning-charge"></i> Energy</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=healthcare" class="category-tab <?php echo $slug == 'healthcare' ? 'active' : ''; ?>"><i class="bi bi-capsule"></i> Healthcare</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=manufacturing" class="category-tab <?php echo $slug == 'manufacturing' ? 'active' : ''; ?>"><i class="bi bi-gear"></i> Manufacturing</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=mining" class="category-tab <?php echo $slug == 'mining' ? 'active' : ''; ?>"><i class="bi bi-minecart"></i> Mining</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=technology-ict" class="category-tab <?php echo $slug == 'technology-ict' ? 'active' : ''; ?>"><i class="bi bi-laptop"></i> ICT</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=tourism-hospitality" class="category-tab <?php echo $slug == 'tourism-hospitality' ? 'active' : ''; ?>"><i class="bi bi-compass"></i> Tourism</a>
+                    <a href="<?= SITE_ROOT ?>/industry.php?slug=transport-logistics" class="category-tab <?php echo $slug == 'transport-logistics' ? 'active' : ''; ?>"><i class="bi bi-truck"></i> Transport</a>
                 </div>
                 <button class="scroll-arrow right" onclick="scrollTabs(1)"><i class="bi bi-chevron-right"></i></button>
             </div>
@@ -479,7 +479,7 @@ $industryNews = [
                 <!-- Sidebar Advertisement Space -->
                 <div class="sidebar-ads">
                     <div class="sidebar-ad">
-                        <a href="/advertise.php?industry=<?php echo $slug; ?>">
+                        <a href="<?= SITE_ROOT ?>/advertise.php?industry=<?php echo $slug; ?>">
                             <div class="ad-placeholder">
                                 <i class="bi bi-megaphone"></i>
                                 <p>Advertise Here</p>
@@ -489,7 +489,7 @@ $industryNews = [
                         </a>
                     </div>
                     <div class="sidebar-ad">
-                        <a href="/advertise.php?industry=<?php echo $slug; ?>">
+                        <a href="<?= SITE_ROOT ?>/advertise.php?industry=<?php echo $slug; ?>">
                             <div class="ad-placeholder">
                                 <i class="bi bi-star-fill"></i>
                                 <p>Featured Spot</p>
@@ -501,7 +501,7 @@ $industryNews = [
                     <div class="advertise-cta">
                         <i class="bi bi-megaphone"></i>
                         <div>Want to be here?</div>
-                        <a href="/advertise.php?industry=<?php echo $slug; ?>">Advertise with us →</a>
+                        <a href="<?= SITE_ROOT ?>/advertise.php?industry=<?php echo $slug; ?>">Advertise with us →</a>
                     </div>
                 </div>
             </div>
@@ -542,7 +542,7 @@ $industryNews = [
                                 <div class="col-md-3">
                                     <figure class="company-logo-box">
                                         <?php if($company['logo']): ?>
-                                        <img src="/industry.co.zw/<?php echo $company['logo']; ?>" alt="<?php echo $company['name']; ?>">
+                                        <img src="<?= SITE_ROOT ?>/<?php echo $company['logo']; ?>" alt="<?php echo $company['name']; ?>">
                                         <?php else: ?>
                                         <div style="font-size:48px; color:#ccc;"><i class="bi bi-building"></i></div>
                                         <?php endif; ?>
@@ -592,7 +592,7 @@ $industryNews = [
                                 <div class="col-md-3">
                                     <figure class="company-logo-box">
                                         <?php if($company['logo']): ?>
-                                        <img src="/industry.co.zw/<?php echo $company['logo']; ?>" alt="<?php echo $company['name']; ?>">
+                                        <img src="<?= SITE_ROOT ?>/<?php echo $company['logo']; ?>" alt="<?php echo $company['name']; ?>">
                                         <?php else: ?>
                                         <div style="font-size:48px; color:#ccc;"><i class="bi bi-building"></i></div>
                                         <?php endif; ?>
@@ -623,7 +623,7 @@ $industryNews = [
                             <div class="news-date"><span class="day">Sponsored</span></div>
                             <a href="#" class="title">Promote Your Company Here <span class="sponsored-tag">Sponsored</span></a>
                             <div class="summary">Reach thousands of industry professionals with your company news, product launches, or announcements.</div>
-                            <a href="/advertise.php?industry=<?php echo $slug; ?>" style="display: inline-block; margin-top: 12px; font-size: 13px; color: #f08a1e; font-weight: 600;">Publish Your News →</a>
+                            <a href="<?= SITE_ROOT ?>/advertise.php?industry=<?php echo $slug; ?>" style="display: inline-block; margin-top: 12px; font-size: 13px; color: #f08a1e; font-weight: 600;">Publish Your News →</a>
                         </div>
                     </div>
                 </div>
@@ -638,7 +638,7 @@ $industryNews = [
 
 <script>
     const slug = '<?php echo $slug; ?>';
-    const API = '/industry.co.zw/api/public';
+    const API = '<?= SITE_ROOT ?>/api/public';
     let allCompanies = [];
     let filteredCompanies = [];
     let currentPage = 1;
@@ -730,7 +730,7 @@ $industryNews = [
           <div class="listing-card" onclick="window.location.href='/company.php?id=${c.id}'">
             ${c.is_featured ? '<div class="featured-badge">Featured</div>' : ''}
             <div class="listing-card-image">
-              ${c.logo ? `<img src="/industry.co.zw/${c.logo}" alt="${c.name}">` : `<div class="no-image"><i class="bi bi-building"></i></div>`}
+              ${c.logo ? `<img src="<?= SITE_ROOT ?>/${c.logo}" alt="${c.name}">` : `<div class="no-image"><i class="bi bi-building"></i></div>`}
               <div class="listing-card-info">
                 <div class="listing-card-title">${c.name}</div>
                 <div class="listing-card-location"><i class="bi bi-geo-alt"></i> ${c.province_name}</div>

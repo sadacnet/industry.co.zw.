@@ -208,7 +208,7 @@ require_once __DIR__ . '/includes/head.php';
     <!-- BREADCRUMB NAVIGATION -->
     <div class="breadcrumb-wrapper">
         <ul class="breadcrumb">
-            <li><a href="index.php"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="<?= SITE_ROOT ?>/index.php"><i class="bi bi-house-door"></i> Home</a></li>
             <li><span class="current">Tenders</span></li>
         </ul>
     </div>
@@ -278,7 +278,7 @@ require_once __DIR__ . '/includes/head.php';
             <p style="color: rgba(255,255,255,0.85);">Submit your tender on industry.co.zw and reach qualified businesses across Zimbabwe.</p>
           </div>
           <div class="col-xl-3 text-center text-xl-end mt-3 mt-xl-0">
-            <a class="cta-btn" href="contact.php" style="background:#fff; color:#2e7d32; padding: 12px 30px; border-radius: 40px; font-weight: 600; text-decoration: none;">Submit Tender →</a>
+            <a class="cta-btn" href="<?= SITE_ROOT ?>/contact.php" style="background:#fff; color:#2e7d32; padding: 12px 30px; border-radius: 40px; font-weight: 600; text-decoration: none;">Submit Tender →</a>
           </div>
         </div>
       </div>
@@ -302,7 +302,7 @@ require_once __DIR__ . '/includes/head.php';
   <?php require_once __DIR__ . '/includes/footer.php'; ?>
 
   <script>
-    const API = '/industry.co.zw/api/public';
+    const API = '<?= SITE_ROOT ?>/api/public';
     let allTenders = [];
 
     fetch(API + '/tenders.php')
@@ -402,7 +402,7 @@ require_once __DIR__ . '/includes/head.php';
                 <button class="btn-view-details mt-3 w-100" onclick="viewDetails(${t.id})">
                   <i class="bi bi-eye"></i> View Details
                 </button>
-                ${t.document_url ? '<a href="/industry.co.zw/' + t.document_url + '" target="_blank" class="btn btn-outline-success btn-sm mt-2 w-100" style="border-color:#2e7d32; color:#2e7d32;"><i class="bi bi-download"></i> Download</a>' : ''}
+                ${t.document_url ? '<a href="<?= SITE_ROOT ?>/' + t.document_url + '" target="_blank" class="btn btn-outline-success btn-sm mt-2 w-100" style="border-color:#2e7d32; color:#2e7d32;"><i class="bi bi-download"></i> Download</a>' : ''}
               </div>
             </div>
           </div>`;
@@ -446,9 +446,9 @@ require_once __DIR__ . '/includes/head.php';
               ${t.contact_phone ? '<p><strong><i class="bi bi-telephone"></i> Phone:</strong><br>' + escapeHtml(t.contact_phone) + '</p>' : ''}
             </div>
             <div class="mt-3">
-              ${t.document_url ? '<a href="/industry.co.zw/' + t.document_url + '" target="_blank" class="btn btn-success btn-sm w-100 mb-2" style="background:#2e7d32; border:none;"><i class="bi bi-download"></i> Download Document 1</a>' : ''}
-              ${t.document_url2 ? '<a href="/industry.co.zw/' + t.document_url2 + '" target="_blank" class="btn btn-outline-success btn-sm w-100 mb-2" style="border-color:#2e7d32; color:#2e7d32;"><i class="bi bi-download"></i> Download Document 2</a>' : ''}
-              ${t.document_url3 ? '<a href="/industry.co.zw/' + t.document_url3 + '" target="_blank" class="btn btn-outline-success btn-sm w-100" style="border-color:#2e7d32; color:#2e7d32;"><i class="bi bi-download"></i> Download Document 3</a>' : ''}
+              ${t.document_url ? '<a href="<?= SITE_ROOT ?>/' + t.document_url + '" target="_blank" class="btn btn-success btn-sm w-100 mb-2" style="background:#2e7d32; border:none;"><i class="bi bi-download"></i> Download Document 1</a>' : ''}
+              ${t.document_url2 ? '<a href="<?= SITE_ROOT ?>/' + t.document_url2 + '" target="_blank" class="btn btn-outline-success btn-sm w-100 mb-2" style="border-color:#2e7d32; color:#2e7d32;"><i class="bi bi-download"></i> Download Document 2</a>' : ''}
+              ${t.document_url3 ? '<a href="<?= SITE_ROOT ?>/' + t.document_url3 + '" target="_blank" class="btn btn-outline-success btn-sm w-100" style="border-color:#2e7d32; color:#2e7d32;"><i class="bi bi-download"></i> Download Document 3</a>' : ''}
             </div>
           </div>
         </div>`;

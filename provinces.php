@@ -17,27 +17,24 @@ $provinces = [
     ['slug' => 'midlands', 'name' => 'Midlands', 'icon' => 'bi-geo-alt', 'description' => 'Central location advantage, mining, manufacturing, and educational institutions', 'company_count' => 0]
 ];
 
-// Fetch actual company counts from API
-$apiUrl = '/industry.co.zw/api/public/companies.php';
-$response = @file_get_contents($apiUrl);
-if ($response) {
-    $data = json_decode($response, true);
-    if ($data['status'] === 'success' && !empty($data['data'])) {
-        $counts = [];
-        foreach ($data['data'] as $company) {
-            $province = strtolower($company['province_name'] ?? '');
-            if ($province) {
-                $counts[$province] = ($counts[$province] ?? 0) + 1;
-            }
-        }
-        // Update province counts
-        foreach ($provinces as &$province) {
-            $provinceKey = str_replace('-', ' ', $province['slug']);
-            if (isset($counts[$provinceKey])) {
-                $province['company_count'] = $counts[$provinceKey];
-            }
+// Fetch actual company counts directly from database (more efficient than internal API call)
+try {
+    $db = (new Database())->getConnection();
+    $countQuery = "SELECT p.slug, COUNT(c.id) as count
+                   FROM provinces p
+                   LEFT JOIN companies c ON p.id = c.province_id AND c.is_active = 1
+                   GROUP BY p.id";
+    $countStmt = $db->query($countQuery);
+    $counts = $countStmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    // Update province counts
+    foreach ($provinces as &$province) {
+        if (isset($counts[$province['slug']])) {
+            $province['company_count'] = (int)$counts[$province['slug']];
         }
     }
+} catch (Exception $e) {
+    // Fallback to 0 if database fails
 }
 ?>
 <style>
@@ -333,7 +330,7 @@ if ($response) {
     <!-- BREADCRUMB NAVIGATION -->
     <div class="breadcrumb-wrapper">
         <ul class="breadcrumb">
-            <li><a href="index.php"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="<?= SITE_ROOT ?>/index.php"><i class="bi bi-house-door"></i> Home</a></li>
             <li><span class="current">Provinces</span></li>
         </ul>
     </div>
@@ -363,7 +360,7 @@ if ($response) {
             <!-- PROVINCES GRID -->
             <div class="provinces-grid" id="provincesContainer">
                 <?php foreach ($provinces as $province): ?>
-                <a href="province.php?slug=<?php echo $province['slug']; ?>" class="province-card" data-name="<?php echo strtolower($province['name']); ?>">
+                <a href="<?= SITE_ROOT ?>/province.php?slug=<?php echo $province['slug']; ?>" class="province-card" data-name="<?php echo strtolower($province['name']); ?>">
                     <div class="province-header">
                         <div class="province-icon"><i class="bi <?php echo $province['icon']; ?>"></i></div>
                         <h3 class="province-name"><?php echo $province['name']; ?></h3>
@@ -394,7 +391,7 @@ if ($response) {
         <div class="cta-section">
             <h3>List Your Company in Your Province</h3>
             <p>Get your business listed in your province and connect with customers, suppliers, and partners across Zimbabwe.</p>
-            <a href="contact.php" class="cta-btn">Add Your Business →</a>
+            <a href="<?= SITE_ROOT ?>/contact.php" class="cta-btn">Add Your Business →</a>
         </div>
     </div>
 

@@ -4,6 +4,14 @@
  * industry.co.zw
  */
 
+// Define site root constant for cross-environment path resolution
+// This must be outside the class to ensure it's defined upon inclusion
+if (!defined('SITE_ROOT')) {
+    // Detect if running on localhost or a live server
+    $is_local = (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['REMOTE_ADDR'] === '127.0.0.1'));
+    define('SITE_ROOT', $is_local ? '/industry.co.zw' : '');
+}
+
 class Database {
     // Database credentials
     private $host;

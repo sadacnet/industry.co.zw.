@@ -45,8 +45,9 @@ $categorySlugToSearchMap = [];
 
 if ($org === 'CIFOZ') {
     try {
-        $db = new PDO('mysql:host=127.0.0.1;dbname=industry_co_zw;charset=utf8mb4', 'root', '');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        require_once __DIR__ . '/api/config/database.php';
+        $database = new Database();
+        $db = $database->getConnection();
         
         // Get all categories for display name mapping
         $stmt = $db->query("SELECT slug, name FROM cifoz_categories");
@@ -689,10 +690,10 @@ if ($org === 'CIFOZ') {
 
     <div class="breadcrumb-wrapper">
         <ul class="breadcrumb">
-            <li><a href="index.php"><i class="bi bi-house-door"></i> Home</a></li>
-            <li><a href="stakeholder.php?org=<?php echo $org; ?>&section=directory"><?php echo $org; ?></a></li>
+            <li><a href="<?= SITE_ROOT ?>/index.php"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="<?= SITE_ROOT ?>/stakeholder.php?org=<?php echo $org; ?>&section=directory"><?php echo $org; ?></a></li>
             <?php if ($category): ?>
-            <li><a href="stakeholder.php?org=<?php echo $org; ?>&section=directory">Directory</a></li>
+            <li><a href="<?= SITE_ROOT ?>/stakeholder.php?org=<?php echo $org; ?>&section=directory">Directory</a></li>
             <li><span class="current"><?php echo ucfirst(str_replace('-', ' ', $category)); ?></span></li>
             <?php else: ?>
             <li><span class="current"><?php echo ucfirst($section); ?></span></li>
@@ -955,7 +956,7 @@ if ($org === 'CIFOZ') {
     const categorySlug = '<?php echo $category; ?>';
     const orgColor = '<?php echo $orgColor; ?>';
     const targetCompanyId = <?php echo $targetCompanyId ? $targetCompanyId : 'null'; ?>;
-    const API = '/industry.co.zw/api/public';
+    const API = '<?= SITE_ROOT ?>/api/public';
     const categorySearchMap = <?php echo json_encode($categorySlugToSearchMap); ?>;
     const categoryDisplayNames = <?php echo json_encode($categoryDisplayNames); ?>;
     let allMembers = [];
@@ -1204,10 +1205,10 @@ if ($org === 'CIFOZ') {
           return `
           <div class="sabai-entity" id="company-${m.id}" data-company-id="${m.id}">
             <div class="sabai-entity-image">
-              ${m.logo ? `<img src="/industry.co.zw/${m.logo}" alt="${m.name.replace(/"/g, '&quot;')}" onerror="this.parentElement.innerHTML='<div class=\\'no-image\\'><i class=\\'bi bi-building\\'></i></div>'">` : `<div class="no-image"><i class="bi bi-building"></i></div>`}
+              ${m.logo ? `<img src="<?= SITE_ROOT ?>/${m.logo}" alt="${m.name.replace(/"/g, '&quot;')}" onerror="this.parentElement.innerHTML='<div class=\\'no-image\\'><i class=\\'bi bi-building\\'></i></div>'">` : `<div class="no-image"><i class="bi bi-building"></i></div>`}
             </div>
             <div class="sabai-entity-body">
-              <div class="sabai-entity-title"><a href="company.php?id=${m.id}">${m.name}</a></div>
+              <div class="sabai-entity-title"><a href="<?= SITE_ROOT ?>/company.php?id=${m.id}">${m.name}</a></div>
               <div class="sabai-entity-category">
                 ${m.industry_name ? `<a href="?org=${org}&section=directory&industry=${encodeURIComponent(m.industry_name)}" class="category-badge"><i class="bi bi-folder"></i> ${m.industry_name}</a>` : ''}
                 ${m.cifoz_member_type && org === 'CIFOZ' ? `<a href="?org=CIFOZ&section=directory&category=${memberTypeSlug}" class="category-badge"><i class="bi bi-tag"></i> ${m.cifoz_member_type}</a>` : ''}

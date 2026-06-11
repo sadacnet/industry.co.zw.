@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../api/config/database.php';
 require_once __DIR__ . '/includes/auth-check.php';
 
 // For testing, we'll provide a way to login directly
@@ -75,12 +76,12 @@ requireAdminLogin();
 </head>
 <body>
     <h1>🔐 Admin API Test Panel</h1>
-    <p>Logged in as: <strong>admin</strong> | <a href="login.php">Go to Dashboard</a></p>
+    <p>Logged in as: <strong>admin</strong> | <a href="<?= SITE_ROOT ?>/admin/login.php">Go to Dashboard</a></p>
 
     <!-- Dashboard Stats -->
     <div class="section">
         <h2>📊 Dashboard Statistics</h2>
-        <button onclick="testEndpoint('/industry.co.zw/admin/api/dashboard.php', 'dashboardResult')">Load Stats</button>
+        <button onclick="testEndpoint('<?= SITE_ROOT ?>/admin/api/dashboard.php', 'dashboardResult')">Load Stats</button>
         <pre id="dashboardResult">Click button to load...</pre>
     </div>
 
@@ -89,7 +90,7 @@ requireAdminLogin();
         <h2>🏢 Members Management</h2>
         
         <h3>Get All Members</h3>
-        <button onclick="testEndpoint('/industry.co.zw/admin/api/members.php', 'allMembersResult')">Load All Members</button>
+        <button onclick="testEndpoint('<?= SITE_ROOT ?>/admin/api/members.php', 'allMembersResult')">Load All Members</button>
         <pre id="allMembersResult">Click button to load...</pre>
         
         <h3>Add New Member</h3>
@@ -126,7 +127,7 @@ requireAdminLogin();
     <div class="section">
         <h2>📅 Events Management</h2>
         
-        <button onclick="testEndpoint('/industry.co.zw/admin/api/events.php', 'eventsResult')">Load All Events</button>
+        <button onclick="testEndpoint('<?= SITE_ROOT ?>/admin/api/events.php', 'eventsResult')">Load All Events</button>
         <pre id="eventsResult">Click button to load...</pre>
         
         <h3>Add New Event</h3>
@@ -147,7 +148,7 @@ requireAdminLogin();
     <div class="section">
         <h2>📄 Tenders Management</h2>
         
-        <button onclick="testEndpoint('/industry.co.zw/admin/api/tenders.php', 'tendersResult')">Load All Tenders</button>
+        <button onclick="testEndpoint('<?= SITE_ROOT ?>/admin/api/tenders.php', 'tendersResult')">Load All Tenders</button>
         <pre id="tendersResult">Click button to load...</pre>
         
         <h3>Add New Tender</h3>
@@ -195,7 +196,7 @@ requireAdminLogin();
             resultDiv.innerHTML = 'Adding member...';
             
             try {
-                const response = await fetch('/industry.co.zw/admin/api/members.php', {
+                const response = await fetch('<?= SITE_ROOT ?>/admin/api/members.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
@@ -226,7 +227,7 @@ requireAdminLogin();
             resultDiv.innerHTML = 'Deleting member...';
             
             try {
-                const response = await fetch(`/industry.co.zw/admin/api/members.php?id=${memberId}`, {
+                const response = await fetch(`<?= SITE_ROOT ?>/admin/api/members.php?id=${memberId}`, {
                     method: 'DELETE'
                 });
                 const result = await response.json();
@@ -255,7 +256,7 @@ requireAdminLogin();
             resultDiv.innerHTML = 'Adding event...';
             
             try {
-                const response = await fetch('/industry.co.zw/admin/api/events.php', {
+                const response = await fetch('<?= SITE_ROOT ?>/admin/api/events.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
@@ -285,7 +286,7 @@ requireAdminLogin();
             resultDiv.innerHTML = 'Adding tender...';
             
             try {
-                const response = await fetch('/industry.co.zw/admin/api/tenders.php', {
+                const response = await fetch('<?= SITE_ROOT ?>/admin/api/tenders.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)

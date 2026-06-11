@@ -328,7 +328,7 @@ require_once __DIR__ . '/includes/head.php';
     <!-- BREADCRUMB NAVIGATION -->
     <div class="breadcrumb-wrapper">
         <ul class="breadcrumb">
-            <li><a href="index.php"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="<?= SITE_ROOT ?>/index.php"><i class="bi bi-house-door"></i> Home</a></li>
             <li><span class="current">Contact</span></li>
         </ul>
     </div>
@@ -539,7 +539,7 @@ require_once __DIR__ . '/includes/head.php';
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
 
 <script>
-    const API_BASE = '/industry.co.zw/api/public';
+    const API_BASE = '<?= SITE_ROOT ?>/api/public';
 
     // FAQ Toggle Functionality - FIXED
     document.querySelectorAll('.faq-item').forEach(item => {

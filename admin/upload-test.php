@@ -165,7 +165,7 @@ require_once __DIR__ . '/includes/header.php';
         resultDiv.innerHTML = '<div class="alert alert-info"><div class="spinner-border spinner-border-sm"></div> Uploading file...</div>';
         
         try {
-            const response = await fetch('/industry.co.zw/admin/api/upload.php', {
+            const response = await fetch('<?= SITE_ROOT ?>/admin/api/upload.php', {
                 method: 'POST',
                 body: formData
             });
@@ -222,17 +222,17 @@ require_once __DIR__ . '/includes/header.php';
             </div>`;
         
         try {
-            const response = await fetch('/industry.co.zw/api/public/gallery.php');
+            const response = await fetch('<?= SITE_ROOT ?>/api/public/gallery.php');
             const data = await response.json();
             
             if (data.status === 'success' && data.data.length > 0) {
                 container.innerHTML = data.data.map(img => `
                     <div class="col-xl-3 col-md-4 col-6 mb-3">
                         <div class="card h-100">
-                            <img src="/industry.co.zw/${img.file_path}" 
+                            <img src="<?= SITE_ROOT ?>/${img.file_path}"
                                  class="card-img-top" 
                                  style="height:120px; object-fit:cover; cursor:pointer;"
-                                 onclick="window.open('/industry.co.zw/${img.file_path}', '_blank')"
+                                 onclick="window.open('<?= SITE_ROOT ?>/${img.file_path}', '_blank')"
                                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22%23ddd%22 width=%22100%22 height=%22100%22/><text y=%22.9em%22 font-size=%2290%22>🖼️</text></svg>'">
                             <div class="card-body p-2">
                                 <small class="text-muted d-block text-truncate" title="${img.title || 'Untitled'}">${img.title || 'Untitled'}</small>

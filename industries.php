@@ -8,9 +8,10 @@ require_once __DIR__ . '/includes/head.php';
 
 // Database connection
 try {
-    $db = new PDO('mysql:host=127.0.0.1;dbname=industry_co_zw;charset=utf8mb4', 'root', '');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
+    require_once __DIR__ . '/api/config/database.php';
+    $database = new Database();
+    $db = $database->getConnection();
+} catch(Exception $e) {
     die("Connection failed: " . $e->getMessage());
 }
 
@@ -672,7 +673,7 @@ function getCompanyUrl($stakeholder, $companyId, $companyName) {
                 <a href="industries.php?slug=<?php echo $selectedIndustry; ?>" class="btn btn-directory">
                     <i class="bi bi-list-ul"></i> Directory View
                 </a>
-                <a href="industry.php?slug=<?php echo $selectedIndustry; ?>&tab=showcase" class="btn btn-showcase-toggle">
+                <a href="<?= SITE_ROOT ?>/industry.php?slug=<?php echo $selectedIndustry; ?>&tab=showcase" class="btn btn-showcase-toggle">
                     <i class="bi bi-star-fill"></i> Showcase View
                 </a>
             </div>
@@ -690,7 +691,7 @@ function getCompanyUrl($stakeholder, $companyId, $companyName) {
                 <a href="<?php echo getCompanyUrl($company['stakeholder'], $company['id'], $company['name']); ?>" class="company-item">
                     <div class="company-logo">
                         <?php if ($company['logo']): ?>
-                        <img src="/industry.co.zw/<?php echo $company['logo']; ?>" alt="<?php echo htmlspecialchars($company['name']); ?>" onerror="this.parentElement.innerHTML='<i class=\'bi bi-building no-logo-icon\'></i>'">
+                        <img src="<?= SITE_ROOT ?>/<?php echo $company['logo']; ?>" alt="<?php echo htmlspecialchars($company['name']); ?>" onerror="this.parentElement.innerHTML='<i class=\'bi bi-building no-logo-icon\'></i>'">
                         <?php else: ?>
                         <i class="bi bi-building no-logo-icon"></i>
                         <?php endif; ?>
@@ -747,7 +748,7 @@ function getCompanyUrl($stakeholder, $companyId, $companyName) {
                             <i class="bi bi-list-ul"></i> View All
                         </a>
                         <?php if ($hasShowcase): ?>
-                        <a href="industry.php?slug=<?php echo $industry['slug']; ?>&tab=showcase" class="action-area showcase">
+                        <a href="<?= SITE_ROOT ?>/industry.php?slug=<?php echo $industry['slug']; ?>&tab=showcase" class="action-area showcase">
                             <i class="bi bi-star-fill"></i> View Featured
                         </a>
                         <?php else: ?>
@@ -763,7 +764,7 @@ function getCompanyUrl($stakeholder, $companyId, $companyName) {
             <!-- Simple CTA -->
             <div class="simple-cta">
                 <p><i class="bi bi-megaphone"></i> Want to be featured?</p>
-                <a href="contact.php">Contact us to advertise →</a>
+                <a href="<?= SITE_ROOT ?>/contact.php">Contact us to advertise →</a>
             </div>
             <?php endif; ?>
             

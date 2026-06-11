@@ -1,0 +1,172 @@
+[Thu Jun 11 05:55:41 2026] PHP 8.3.6 Development Server (http://localhost:8000) started
+[Thu Jun 11 06:00:09 2026] [::1]:49972 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:49972 [200]: GET /index.php
+[Thu Jun 11 06:00:09 2026] [::1]:49972 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:49980 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:49992 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:49994 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50002 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50018 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50024 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:49980 [200]: GET /assets/vendor/bootstrap/css/bootstrap.min.css
+[Thu Jun 11 06:00:09 2026] [::1]:49992 [200]: GET /assets/vendor/bootstrap-icons/bootstrap-icons.css
+[Thu Jun 11 06:00:09 2026] [::1]:49994 [200]: GET /assets/vendor/aos/aos.css
+[Thu Jun 11 06:00:09 2026] [::1]:50002 [200]: GET /assets/vendor/glightbox/css/glightbox.min.css
+[Thu Jun 11 06:00:09 2026] [::1]:50018 [200]: GET /assets/vendor/swiper/swiper-bundle.min.css
+[Thu Jun 11 06:00:09 2026] [::1]:50024 [200]: GET /assets/css/main.css
+[Thu Jun 11 06:00:09 2026] [::1]:49980 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:49992 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:49994 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50002 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50018 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50024 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50036 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50044 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50036 [200]: GET /assets/img/industry-logo-20.png
+[Thu Jun 11 06:00:09 2026] [::1]:50046 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50044 [200]: GET /assets/img/clients/turnall-logo.jpg
+[Thu Jun 11 06:00:09 2026] [::1]:50056 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50062 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50036 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50078 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50044 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50046 [200]: GET /assets/img/clients/earthwave.jpg
+[Thu Jun 11 06:00:09 2026] [::1]:50046 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50080 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50078 [200]: GET /assets/vendor/bootstrap/js/bootstrap.bundle.min.js
+[Thu Jun 11 06:00:09 2026] [::1]:50056 [200]: GET /assets/img/clients/fueltec.jpg
+[Thu Jun 11 06:00:09 2026] [::1]:50062 [200]: GET /assets/img/clients/masimba.jpg
+[Thu Jun 11 06:00:09 2026] [::1]:50086 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50080 [200]: GET /assets/vendor/aos/aos.js
+[Thu Jun 11 06:00:09 2026] [::1]:50100 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50086 [200]: GET /assets/vendor/glightbox/js/glightbox.min.js
+[Thu Jun 11 06:00:09 2026] [::1]:50078 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50056 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50062 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50100 [200]: GET /assets/vendor/swiper/swiper-bundle.min.js
+[Thu Jun 11 06:00:09 2026] [::1]:50080 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50086 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50100 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50116 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50122 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50130 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50142 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50150 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50116 [200]: GET /assets/vendor/waypoints/noframework.waypoints.js
+[Thu Jun 11 06:00:09 2026] [::1]:50116 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50122 [200]: GET /assets/vendor/imagesloaded/imagesloaded.pkgd.min.js
+[Thu Jun 11 06:00:09 2026] [::1]:50130 [200]: GET /assets/vendor/isotope-layout/isotope.pkgd.min.js
+[Thu Jun 11 06:00:09 2026] [::1]:50142 [200]: GET /assets/js/main.js
+[Thu Jun 11 06:00:09 2026] [::1]:50122 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50130 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50142 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50150 [200]: GET /assets/img/clients/edenvine-mobile-logo.jpg
+[Thu Jun 11 06:00:09 2026] [::1]:50150 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50164 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50164 [200]: GET /assets/img/clients/asphalt-logo.jpg
+[Thu Jun 11 06:00:09 2026] [::1]:50164 Closing
+[Thu Jun 11 06:00:09 2026] [::1]:50172 Accepted
+[Thu Jun 11 06:00:09 2026] [::1]:50172 [200]: GET /assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a
+[Thu Jun 11 06:00:09 2026] [::1]:50172 Closing
+[Thu Jun 11 06:00:10 2026] [::1]:50178 Accepted
+[Thu Jun 11 06:00:10 2026] [::1]:50178 [200]: GET /assets/img/hero.png
+[Thu Jun 11 06:00:10 2026] [::1]:50178 Closing
+[Thu Jun 11 06:00:11 2026] [::1]:57966 Accepted
+[Thu Jun 11 06:00:11 2026] [::1]:57966 [500]: GET /provinces.php
+[Thu Jun 11 06:00:11 2026] [::1]:57966 Closing
+[Thu Jun 11 06:00:12 2026] [::1]:57970 Accepted
+[Thu Jun 11 06:00:12 2026] [::1]:57974 Accepted
+[Thu Jun 11 06:00:12 2026] [::1]:57970 [200]: GET /assets/vendor/bootstrap/css/bootstrap.min.css
+[Thu Jun 11 06:00:12 2026] [::1]:57980 Accepted
+[Thu Jun 11 06:00:12 2026] [::1]:57990 Accepted
+[Thu Jun 11 06:00:12 2026] [::1]:57992 Accepted
+[Thu Jun 11 06:00:12 2026] [::1]:58002 Accepted
+[Thu Jun 11 06:00:12 2026] [::1]:57970 Closing
+[Thu Jun 11 06:00:12 2026] [::1]:57974 [200]: GET /assets/vendor/bootstrap-icons/bootstrap-icons.css
+[Thu Jun 11 06:00:12 2026] [::1]:57980 [200]: GET /assets/vendor/aos/aos.css
+[Thu Jun 11 06:00:12 2026] [::1]:57990 [200]: GET /assets/vendor/glightbox/css/glightbox.min.css
+[Thu Jun 11 06:00:12 2026] [::1]:57992 [200]: GET /assets/vendor/swiper/swiper-bundle.min.css
+[Thu Jun 11 06:00:12 2026] [::1]:58002 [200]: GET /assets/css/main.css
+[Thu Jun 11 06:00:12 2026] [::1]:57974 Closing
+[Thu Jun 11 06:00:12 2026] [::1]:57980 Closing
+[Thu Jun 11 06:00:12 2026] [::1]:57990 Closing
+[Thu Jun 11 06:00:12 2026] [::1]:57992 Closing
+[Thu Jun 11 06:00:12 2026] [::1]:58002 Closing
+[Thu Jun 11 06:00:13 2026] [::1]:58010 Accepted
+[Thu Jun 11 06:00:13 2026] [::1]:58010 [500]: GET /industries.php
+[Thu Jun 11 06:00:13 2026] [::1]:58010 Closing
+[Thu Jun 11 06:00:13 2026] [::1]:58020 Accepted
+[Thu Jun 11 06:00:13 2026] [::1]:58020 [200]: GET /assets/vendor/bootstrap/css/bootstrap.min.css
+[Thu Jun 11 06:00:13 2026] [::1]:58020 Closing
+[Thu Jun 11 06:00:13 2026] [::1]:58030 Accepted
+[Thu Jun 11 06:00:13 2026] [::1]:58030 [200]: GET /assets/vendor/bootstrap-icons/bootstrap-icons.css
+[Thu Jun 11 06:00:13 2026] [::1]:58030 Closing
+[Thu Jun 11 06:00:13 2026] [::1]:58032 Accepted
+[Thu Jun 11 06:00:13 2026] [::1]:58038 Accepted
+[Thu Jun 11 06:00:13 2026] [::1]:58032 [200]: GET /assets/vendor/aos/aos.css
+[Thu Jun 11 06:00:13 2026] [::1]:58044 Accepted
+[Thu Jun 11 06:00:13 2026] [::1]:58038 [200]: GET /assets/vendor/glightbox/css/glightbox.min.css
+[Thu Jun 11 06:00:13 2026] [::1]:58050 Accepted
+[Thu Jun 11 06:00:13 2026] [::1]:58044 [200]: GET /assets/vendor/swiper/swiper-bundle.min.css
+[Thu Jun 11 06:00:13 2026] [::1]:58032 Closing
+[Thu Jun 11 06:00:13 2026] [::1]:58050 [200]: GET /assets/css/main.css
+[Thu Jun 11 06:00:13 2026] [::1]:58038 Closing
+[Thu Jun 11 06:00:13 2026] [::1]:58044 Closing
+[Thu Jun 11 06:00:13 2026] [::1]:58050 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58058 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58058 [200]: GET /stakeholder.php?org=CZI
+[Thu Jun 11 06:00:14 2026] [::1]:58058 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58074 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58076 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58086 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58090 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58092 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58096 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58074 [200]: GET /assets/vendor/bootstrap/css/bootstrap.min.css
+[Thu Jun 11 06:00:14 2026] [::1]:58076 [200]: GET /assets/vendor/bootstrap-icons/bootstrap-icons.css
+[Thu Jun 11 06:00:14 2026] [::1]:58086 [200]: GET /assets/vendor/aos/aos.css
+[Thu Jun 11 06:00:14 2026] [::1]:58074 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58076 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58086 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58108 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58090 [200]: GET /assets/vendor/glightbox/css/glightbox.min.css
+[Thu Jun 11 06:00:14 2026] [::1]:58092 [200]: GET /assets/vendor/swiper/swiper-bundle.min.css
+[Thu Jun 11 06:00:14 2026] [::1]:58096 [200]: GET /assets/css/main.css
+[Thu Jun 11 06:00:14 2026] [::1]:58110 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58090 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58092 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58096 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58122 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58108 [200]: GET /assets/img/industry-logo-20.png
+[Thu Jun 11 06:00:14 2026] [::1]:58108 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58110 [200]: GET /assets/vendor/bootstrap/js/bootstrap.bundle.min.js
+[Thu Jun 11 06:00:14 2026] [::1]:58110 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58132 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58134 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58136 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58122 [200]: GET /assets/vendor/aos/aos.js
+[Thu Jun 11 06:00:14 2026] [::1]:58122 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58132 [200]: GET /assets/vendor/glightbox/js/glightbox.min.js
+[Thu Jun 11 06:00:14 2026] [::1]:58134 [200]: GET /assets/vendor/swiper/swiper-bundle.min.js
+[Thu Jun 11 06:00:14 2026] [::1]:58132 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58134 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58142 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58136 [200]: GET /assets/vendor/waypoints/noframework.waypoints.js
+[Thu Jun 11 06:00:14 2026] [::1]:58150 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58142 [200]: GET /assets/vendor/imagesloaded/imagesloaded.pkgd.min.js
+[Thu Jun 11 06:00:14 2026] [::1]:58162 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58136 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58142 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58150 [200]: GET /assets/vendor/isotope-layout/isotope.pkgd.min.js
+[Thu Jun 11 06:00:14 2026] [::1]:58162 [200]: GET /assets/js/main.js
+[Thu Jun 11 06:00:14 2026] [::1]:58150 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58162 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58172 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58172 [200]: GET /assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a
+[Thu Jun 11 06:00:14 2026] [::1]:58172 Closing
+[Thu Jun 11 06:00:14 2026] [::1]:58178 Accepted
+[Thu Jun 11 06:00:14 2026] [::1]:58178 [500]: GET /api/public/companies.php?stakeholder=CZI&limit=2000
+[Thu Jun 11 06:00:14 2026] [::1]:58178 Closing
+[Thu Jun 11 06:00:15 2026] [::1]:58188 Accepted
+[Thu Jun 11 06:00:15 2026] [::1]:58188 [200]: GET /admin/login.php
+[Thu Jun 11 06:00:15 2026] [::1]:58188 Closing

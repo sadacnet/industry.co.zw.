@@ -189,7 +189,7 @@ require_once __DIR__ . '/includes/header.php';
 </div>
 
 <script>
-    const API_BASE = '/industry.co.zw';
+    const API_BASE = '<?= SITE_ROOT ?>';
     let allCompanies = [];
     let allProducts = [];
 

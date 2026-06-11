@@ -9,7 +9,7 @@ require_once __DIR__ . '/includes/head.php';
         position: relative;
         width: 100%;
         min-height: 100vh;
-        background: url('assets/img/hero.png') center/cover no-repeat;
+        background: url('<?= SITE_ROOT ?>/assets/img/hero.png') center/cover no-repeat;
         background-color: #0a1e3d;
         display: flex;
         align-items: center;
@@ -175,7 +175,7 @@ require_once __DIR__ . '/includes/head.php';
         <h1 class="hero-title">Technology &amp; Artificial Intelligence (AI) Shaping The Industry</h1>
         <div class="hero-buttons">
             <a href="industries.php" class="hero-btn">Find Suppliers</a>
-            <a href="stakeholder.php?org=CZI&section=directory" class="hero-btn">CZI eDirectory</a>
+            <a href="<?= SITE_ROOT ?>/stakeholder.php?org=CZI&section=directory" class="hero-btn">CZI eDirectory</a>
             <a href="contact.php" class="hero-btn">List Your Business Here!!</a>
         </div>
     </div>
@@ -194,10 +194,10 @@ require_once __DIR__ . '/includes/head.php';
     <!-- Categories + Carousel -->
     <section class="categories-section">
         <div class="category-list">
-            <a href="industry.php?slug=auto" class="category-item">Auto Mobile</a>
-            <a href="industry.php?slug=construction" class="category-item">Concrete Products</a>
-            <a href="industry.php?slug=technology-ict" class="category-item">Security</a>
-            <a href="industry.php?slug=manufacturing" class="category-item">Packaging</a>
+            <a href="<?= SITE_ROOT ?>/industry.php?slug=auto" class="category-item">Auto Mobile</a>
+            <a href="<?= SITE_ROOT ?>/industry.php?slug=construction" class="category-item">Concrete Products</a>
+            <a href="<?= SITE_ROOT ?>/industry.php?slug=technology-ict" class="category-item">Security</a>
+            <a href="<?= SITE_ROOT ?>/industry.php?slug=manufacturing" class="category-item">Packaging</a>
         </div>
 
         <h3 class="featured-companies-title">Featured Companies</h3>
@@ -207,12 +207,12 @@ require_once __DIR__ . '/includes/head.php';
                 <i class="bi bi-chevron-left"></i>
             </button>
             <div class="carousel-track" id="carouselTrack">
-                <div class="carousel-slide"><img src="assets/img/clients/turnall-logo.jpg" alt="Turnall"></div>
-                <div class="carousel-slide"><img src="assets/img/clients/earthwave.jpg" alt="Earthwave"></div>
-                <div class="carousel-slide"><img src="assets/img/clients/fueltec.jpg" alt="Fueltec"></div>
-                <div class="carousel-slide"><img src="assets/img/clients/masimba.jpg" alt="Masimba"></div>
-                <div class="carousel-slide"><img src="assets/img/clients/edenvine-mobile-logo.jpg" alt="Edenvine"></div>
-                <div class="carousel-slide"><img src="assets/img/clients/asphalt-logo.jpg" alt="Asphalt"></div>
+                <div class="carousel-slide"><img src="<?= SITE_ROOT ?>/assets/img/clients/turnall-logo.jpg" alt="Turnall"></div>
+                <div class="carousel-slide"><img src="<?= SITE_ROOT ?>/assets/img/clients/earthwave.jpg" alt="Earthwave"></div>
+                <div class="carousel-slide"><img src="<?= SITE_ROOT ?>/assets/img/clients/fueltec.jpg" alt="Fueltec"></div>
+                <div class="carousel-slide"><img src="<?= SITE_ROOT ?>/assets/img/clients/masimba.jpg" alt="Masimba"></div>
+                <div class="carousel-slide"><img src="<?= SITE_ROOT ?>/assets/img/clients/edenvine-mobile-logo.jpg" alt="Edenvine"></div>
+                <div class="carousel-slide"><img src="<?= SITE_ROOT ?>/assets/img/clients/asphalt-logo.jpg" alt="Asphalt"></div>
             </div>
             <button class="carousel-btn carousel-btn-right" onclick="slideCarousel(1)">
                 <i class="bi bi-chevron-right"></i>
@@ -228,14 +228,14 @@ require_once __DIR__ . '/includes/head.php';
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="<?= SITE_ROOT ?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= SITE_ROOT ?>/assets/vendor/aos/aos.js"></script>
+<script src="<?= SITE_ROOT ?>/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="<?= SITE_ROOT ?>/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="<?= SITE_ROOT ?>/assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="<?= SITE_ROOT ?>/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="<?= SITE_ROOT ?>/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="<?= SITE_ROOT ?>/assets/js/main.js"></script>
 
 <!-- Carousel JS -->
 <script>

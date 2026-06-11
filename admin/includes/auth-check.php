@@ -4,6 +4,12 @@
  * Include this file in all admin pages to verify login
  */
 
+require_once __DIR__ . '/../../api/config/database.php';
+
+/**
+ * Include this file in all admin pages to verify login
+ */
+
 // Start session if not already started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -33,7 +39,7 @@ function requireAdminLogin() {
             exit;
         } else {
             // Otherwise redirect to login page
-            header('Location: /industry.co.zw/admin/login.php');
+            header('Location: ' . SITE_ROOT . '/admin/login.php');
             exit;
         }
     }
@@ -66,7 +72,7 @@ function logoutAdmin() {
     session_destroy();
     
     // Redirect to login
-    header('Location: /industry.co.zw/admin/login.php');
+    header('Location: ' . SITE_ROOT . '/admin/login.php');
     exit;
 }
 ?>

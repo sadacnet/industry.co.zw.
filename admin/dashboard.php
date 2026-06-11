@@ -159,7 +159,7 @@ $currentAdmin = getCurrentAdmin();
         // Load dashboard stats
         async function loadStats() {
             try {
-                const response = await fetch('/industry.co.zw/admin/api/dashboard.php');
+                const response = await fetch('<?= SITE_ROOT ?>/admin/api/dashboard.php');
                 const data = await response.json();
                 
                 if (data.status === 'success') {
@@ -198,8 +198,8 @@ $currentAdmin = getCurrentAdmin();
         }
         
         async function logout() {
-            await fetch('/industry.co.zw/admin/api/auth.php', { method: 'DELETE' });
-            window.location.href = '/industry.co.zw/admin/login.php';
+            await fetch('<?= SITE_ROOT ?>/admin/api/auth.php', { method: 'DELETE' });
+            window.location.href = '<?= SITE_ROOT ?>/admin/login.php';
         }
         
         // Load stats on page load

@@ -392,7 +392,7 @@ require_once __DIR__ . '/includes/head.php';
   <?php require_once __DIR__ . '/includes/footer.php'; ?>
 
   <script>
-    const API_BASE = '/industry.co.zw/api/public';
+    const API_BASE = '<?= SITE_ROOT ?>/api/public';
     let allProducts = [];
     let currentPage = 1;
     const itemsPerPage = 8;
@@ -518,7 +518,7 @@ require_once __DIR__ . '/includes/head.php';
         <div class="product-card">
           ${p.verified ? '<span class="verified-badge"><i class="bi bi-patch-check-fill"></i> Verified</span>' : ''}
           <div class="product-card-image">
-            ${p.image ? `<img src="/industry.co.zw/${p.image}" alt="${escapeHtml(p.name)}">` : `<div class="default-icon"><i class="bi bi-box-seam"></i></div>`}
+            ${p.image ? `<img src="<?= SITE_ROOT ?>/${p.image}" alt="${escapeHtml(p.name)}">` : `<div class="default-icon"><i class="bi bi-box-seam"></i></div>`}
           </div>
           <div class="product-card-body">
             <span class="category-badge">${escapeHtml(p.category)}</span>

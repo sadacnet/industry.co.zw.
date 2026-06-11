@@ -38,7 +38,7 @@ try {
     }
 
     // Use absolute path for upload directory
-    $projectRoot = $_SERVER['DOCUMENT_ROOT'] . '/industry.co.zw/';
+    $projectRoot = dirname(__DIR__, 2) . '/';
     $uploadDir = $projectRoot . 'uploads/' . $type . 's/';
 
     // Debug: Uncomment to see the path (remove in production)
@@ -121,7 +121,7 @@ try {
             "message" => "File uploaded successfully!",
             "data" => [
                 "file_path" => $relativePath,
-                "full_url" => '/industry.co.zw/' . $relativePath,
+                "full_url" => (defined('SITE_ROOT') ? SITE_ROOT : '') . '/' . $relativePath,
                 "file_name" => $newFileName,
                 "original_name" => $fileName,
                 "file_type" => $fileExt,

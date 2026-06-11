@@ -79,7 +79,7 @@
                 <label>Event Poster / Image</label>
                 <div class="input-group">
                     <input type="text" id="poster" class="form-control" placeholder="e.g., uploads/posters/event-image.jpg">
-                    <button type="button" class="btn btn-info" onclick="window.open('/industry.co.zw/admin/upload-images.php', '_blank')">
+                    <button type="button" class="btn btn-info" onclick="window.open('<?= SITE_ROOT ?>/admin/upload-images.php', '_blank')">
                         <i class="bi bi-cloud-upload"></i> Upload New
                     </button>
                 </div>
@@ -118,7 +118,7 @@
         const preview = document.getElementById('posterPreview');
         const img = document.getElementById('posterPreviewImg');
         if (path) {
-            img.src = '/industry.co.zw/' + path;
+            img.src = '<?= SITE_ROOT ?>/' + path;
             preview.style.display = 'block';
         } else {
             preview.style.display = 'none';
@@ -133,7 +133,7 @@
     
     async function loadEvents() {
         try {
-            const response = await fetch('/industry.co.zw/admin/api/events.php');
+            const response = await fetch('<?= SITE_ROOT ?>/admin/api/events.php');
             const data = await response.json();
             
             if (data.status === 'success') {
@@ -149,7 +149,7 @@
                         <td>${event.id}</td>
                         <td>
                             ${event.poster ? 
-                                `<img src="/industry.co.zw/${event.poster}" style="max-height:40px; max-width:60px; border-radius:4px; cursor:pointer;" onclick="window.open('/industry.co.zw/${event.poster}','_blank')" onerror="this.style.display='none'">` : 
+                                `<img src="<?= SITE_ROOT ?>/${event.poster}" style="max-height:40px; max-width:60px; border-radius:4px; cursor:pointer;" onclick="window.open('<?= SITE_ROOT ?>/${event.poster}','_blank')" onerror="this.style.display='none'">` :
                                 '<span class="badge bg-secondary">No Image</span>'}
                         </td>
                         <td><strong>${event.title}</strong></td>
@@ -187,7 +187,7 @@
     
     async function editEvent(id) {
         try {
-            const response = await fetch('/industry.co.zw/admin/api/events.php');
+            const response = await fetch('<?= SITE_ROOT ?>/admin/api/events.php');
             const data = await response.json();
             const event = data.data.find(e => e.id == id);
             
@@ -205,7 +205,7 @@
                 
                 // Show preview if poster exists
                 if (event.poster) {
-                    document.getElementById('posterPreviewImg').src = '/industry.co.zw/' + event.poster;
+                    document.getElementById('posterPreviewImg').src = '<?= SITE_ROOT ?>/' + event.poster;
                     document.getElementById('posterPreview').style.display = 'block';
                 } else {
                     document.getElementById('posterPreview').style.display = 'none';
@@ -222,7 +222,7 @@
         if (!confirmDelete()) return;
         
         try {
-            const response = await fetch(`/industry.co.zw/admin/api/events.php?id=${id}`, {
+            const response = await fetch(`<?= SITE_ROOT ?>/admin/api/events.php?id=${id}`, {
                 method: 'DELETE'
             });
             const data = await response.json();
@@ -252,8 +252,8 @@
         };
         
         const url = eventId ? 
-            `/industry.co.zw/admin/api/events.php?id=${eventId}` : 
-            '/industry.co.zw/admin/api/events.php';
+            `<?= SITE_ROOT ?>/admin/api/events.php?id=${eventId}` :
+            '<?= SITE_ROOT ?>/admin/api/events.php';
         
         const method = eventId ? 'PUT' : 'POST';
         
